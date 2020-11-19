@@ -1,0 +1,30 @@
+@import "../../design/colors";
+
+.panel {
+  background-color: white;
+
+  .header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0.4rem;
+    color: white;
+    background-color: $teal;
+
+    .icon {
+      flex: 0 0 10%;
+      max-width: 18px;
+      height: auto;
+      margin: 4px;
+    }
+
+    .title {
+      flex: 1 0 90%;
+      text-align: center;
+    }
+  }
+
+  .body {
+    padding: 0.4rem 1rem;
+  }
+}
