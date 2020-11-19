@@ -6,13 +6,18 @@
 
   .submitBtn {
     align-self: flex-end;
-    margin: 2rem 0 1rem 0;
     padding: 0.6rem 4rem;
+    margin: 2rem 0 1rem 0;
     font-weight: bold;
     color: white;
     text-transform: uppercase;
+    cursor: pointer;
     background-color: $orange;
     border: none;
     border-radius: 4px;
+
+    &:hover {
+      background-color: darken($orange, 25%);
+    }
   }
 }

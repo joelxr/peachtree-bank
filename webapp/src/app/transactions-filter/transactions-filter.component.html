@@ -1,0 +1,19 @@
+<form class="form" novalidate>
+  <div class="left">
+    <app-input-text
+      id="searchBy"
+      placeholder="Search by typing"
+      [value]="searchBy"
+      (valueChanged)="handleSearchByChanged($event)"
+      >
+    </app-input-text>
+  </div>
+  <div class="right">
+    <app-transactions-sorter
+      [value]="sortingPreferences"
+      (valueChanged)="handleSortingPreferencesChanged()"
+    >
+    </app-transactions-sorter>
+  </div>
+
+</form>

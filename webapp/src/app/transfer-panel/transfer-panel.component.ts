@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransferPanelComponent implements OnInit {
 
+  origin = 'Free Checking(4692) - $5824.76';
+  beneficiary = '';
+  amount = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sendTransfer(): void {
+    console.log(this.origin, this.beneficiary, this.amount);
   }
 
 }

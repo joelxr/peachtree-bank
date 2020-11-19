@@ -1,0 +1,44 @@
+@import "../../design/colors";
+
+.sorter {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  width: 100%;
+
+  label {
+    flex: 0 0 38px;
+    margin-right: 1rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .sortingBtns {
+    display: flex;
+    flex: 1 1 calc(100% - 38px);
+    flex-flow: row nowrap;
+
+    .sortingBtn {
+      display: flex;
+      flex-flow: row nowrap;
+      min-width: 90px;
+      padding: 0.4rem 0.8rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+      cursor: pointer;
+      background-color: white;
+      border: 1px solid $border-color;
+
+      .prop {
+        flex: 1 0 auto;
+        text-align: center;
+      }
+
+      .order {
+        flex: 0 0 16px;
+        color: $input-text-color;
+        text-align: center;
+      }
+    }
+  }
+}

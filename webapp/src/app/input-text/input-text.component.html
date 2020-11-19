@@ -1,17 +1,32 @@
 <div class="inputGroup">
   <label
-    *ngIf="!!label"
+    *ngIf="label"
     [for]="id"
   >
-    {{ label }}
+  {{ label }}
   </label>
-  <input
-    class="input"
-    type="text"
-    [name]="id"
-    [id]="id"
-    [placeholder]="placeholder"
-    [readonly]="readOnly"
-    [(value)]="value"
-  />
+  <div class=inputWrapper>
+    <span
+      *ngIf="unit && unitPlacement === 'start'"
+      class="unit"
+    >
+      {{ unit }}
+    </span>
+    <input
+      class="input"
+      [type]="inputType"
+      [name]="id"
+      [id]="id"
+      [placeholder]="placeholder"
+      [readonly]="readOnly"
+      [value]="value"
+      (input)="handleTextInput($event.target.value)"
+    />
+    <span
+      *ngIf="unit && unitPlacement === 'end'"
+      class="unit"
+    >
+      {{ unit }}
+    </span>
+  </div>
 </div>

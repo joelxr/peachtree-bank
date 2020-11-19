@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+
+  .left {
+    flex: 1 0 40%;
+    margin-right: 1rem;
+  }
+
+  .right {
+    flex: 0 1 auto;
+  }
+}

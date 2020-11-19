@@ -12,12 +12,18 @@ export class InputTextComponent implements OnInit {
   @Input() placeholder = '';
   @Input() readOnly = false;
   @Input() value = '';
+  @Input() inputType = 'text';
+  @Input() unit = '';
+  @Input() unitPlacement = '';
 
-  @Output() valueChange = new EventEmitter<number>();
+  @Output() valueChanged = new EventEmitter<string>();
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
+  handleTextInput(value): void {
+    this.value = value;
+    this.valueChanged.emit(this.value);
+  }
 }

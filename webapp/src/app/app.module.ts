@@ -7,6 +7,8 @@ import { PanelComponent } from './panel/panel.component';
 import { InputTextComponent } from './input-text/input-text.component';
 import { TransferPanelComponent } from './transfer-panel/transfer-panel.component';
 import { TransactionsPanelComponent } from './transactions-panel/transactions-panel.component';
+import { TransactionsFilterComponent } from './transactions-filter/transactions-filter.component';
+import { TransactionsSorterComponent } from './transactions-sorter/transactions-sorter.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { TransactionsPanelComponent } from './transactions-panel/transactions-pa
     PanelComponent,
     InputTextComponent,
     TransferPanelComponent,
-    TransactionsPanelComponent
+    TransactionsPanelComponent,
+    TransactionsFilterComponent,
+    TransactionsSorterComponent
   ],
   imports: [
     BrowserModule

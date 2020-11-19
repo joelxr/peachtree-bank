@@ -1,0 +1,15 @@
+<div class="sorter">
+  <label>Sort by</label>
+  <div class="sortingBtns">
+    <button
+      *ngFor="let preference of value;"
+      type="button"
+      class="sortingBtn"
+      (click)="updateSortingPreference(preference)"
+    >
+      <span class="prop">{{preference.prop}}</span>
+      <span *ngIf="preference.order && preference.order === 'DESC'" class="order">▼</span>
+      <span *ngIf="preference.order && preference.order === 'ASC'" class="order">▲</span>
+    </button>
+ </div>
+</div>

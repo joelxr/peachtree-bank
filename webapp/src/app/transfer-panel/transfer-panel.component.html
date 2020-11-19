@@ -4,24 +4,31 @@
       id="fromAccount"
       label="From Account"
       [readOnly]="true"
-      value="Free Checking(4692) - $5824.76"
+      [value]="origin"
       >
     </app-input-text>
-      <app-input-text
-        id="toAccount"
-        label="To Account"
-        >
-      </app-input-text>
-        <app-input-text
-          id="amount"
-          label="Amount"
-          >
-        </app-input-text>
-
-          <button class="submitBtn">
-            Submit
-          </button>
-
+    <app-input-text
+      id="toAccount"
+      label="To Account"
+      [(value)]="beneficiary"
+    >
+    </app-input-text>
+    <app-input-text
+      id="amountToTransfer"
+      label="Amount"
+      inputType="number"
+      unit="$"
+      unitPlacement="start"
+      [(value)]="amount"
+    >
+    </app-input-text>
+    <button
+      type="button"
+      class="submitBtn"
+      (click)="sendTransfer()"
+    >
+      Submit
+    </button>
   </div>
 </app-panel>
 

@@ -1,3 +1,5 @@
+@import "../../design/colors";
+
 .inputGroup {
   margin: 1rem 0;
 
@@ -8,12 +10,21 @@
     text-transform: uppercase;
   }
 
-  .input {
+  .inputWrapper {
+    display: flex;
     width: 100%;
-    padding: 0.2rem 0;
-    color: #87837f;
-    border: none;
-    border-bottom: 1px solid #cfcac5;
-    outline: none;
+    color: $input-text-color;
+    border-bottom: 1px solid $border-color;
+
+    .unit {
+      flex: 0 1 5%;
+    }
+
+    .input {
+      flex: 0 1 95%;
+      padding: 0.2rem 0;
+      border: none;
+      outline: none;
+    }
   }
 }
