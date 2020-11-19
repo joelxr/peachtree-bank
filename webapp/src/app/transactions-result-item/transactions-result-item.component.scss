@@ -1,0 +1,112 @@
+@import "../../design/colors";
+@import "../../design/breakpoints";
+
+.transaction {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  border: 1px solid $border-color;
+  border-left: 7px solid $border-color;
+
+  .date {
+    flex: 0 1 30px;
+    color: $input-text-color;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+    margin: 0 0.4rem;
+
+    .img {
+      width: 24px;
+      height: 24px;
+
+      &.placeholder {
+        background-color: $border-color;
+      }
+    }
+  }
+
+  .beneficiary {
+    flex: 2 0 auto;
+
+    p {
+      padding: 0;
+      margin: 0;
+
+      &:first-child {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .amount {
+    flex: 0 0 auto;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+@media (min-width: $sm) {
+  .transaction {
+    .date {
+      flex-basis: 36px;
+    }
+
+    .logo {
+      .img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .transaction {
+    .date {
+      flex-basis: 40px;
+    }
+
+    .logo {
+      .img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  .transaction {
+    .date {
+      flex-basis: 48px;
+    }
+
+    .logo {
+      .img {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+@media (min-width: $xl) {
+  .transaction {
+    .date {
+      flex-basis: 56px;
+    }
+
+    .logo {
+      .img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+}

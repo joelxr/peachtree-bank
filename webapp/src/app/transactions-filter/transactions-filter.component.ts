@@ -24,6 +24,7 @@ export class TransactionsFilterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.filterChanged.emit(this.filter);
   }
 
   handleSearchByChanged(text: string): void {

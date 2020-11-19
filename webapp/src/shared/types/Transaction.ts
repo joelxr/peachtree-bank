@@ -13,6 +13,7 @@ export class Transaction {
   };
   merchant: {
     name: string,
-    accountNumber: string
+    accountNumber: string,
+    logo?: string
   };
 }

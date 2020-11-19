@@ -20,12 +20,13 @@ export class TransactionsSorterComponent implements OnInit {
 
   updateSortingPreference(preference: SortingPreference): void {
     if (
-      preference.order === SortingOrder.NONE ||
-      preference.order === SortingOrder.ASC
+      preference.order === SortingOrder.NONE
     )  {
       preference.order = SortingOrder.DESC;
     } else if (preference.order === SortingOrder.DESC) {
       preference.order = SortingOrder.ASC;
+    } else if (preference.order === SortingOrder.ASC) {
+      preference.order = SortingOrder.NONE;
     }
 
     this.valueChanged.emit(this.value);

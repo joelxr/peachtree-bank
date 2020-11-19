@@ -3,5 +3,9 @@
     (filterChanged)="loadTransactions($event)"
   >
   </app-transactions-filter>
+  <app-transactions-result
+    [transactions]="transactions"
+  >
+  </app-transactions-result>
 </app-panel>
 

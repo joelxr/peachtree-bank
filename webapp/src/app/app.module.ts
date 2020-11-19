@@ -10,6 +10,8 @@ import { TransactionsPanelComponent } from './transactions-panel/transactions-pa
 import { TransactionsFilterComponent } from './transactions-filter/transactions-filter.component';
 import { TransactionsSorterComponent } from './transactions-sorter/transactions-sorter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TransactionsResultComponent } from './transactions-result/transactions-result.component';
+import { TransactionsResultItemComponent } from './transactions-result-item/transactions-result-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     TransferPanelComponent,
     TransactionsPanelComponent,
     TransactionsFilterComponent,
-    TransactionsSorterComponent
+    TransactionsSorterComponent,
+    TransactionsResultComponent,
+    TransactionsResultItemComponent
   ],
   imports: [
     BrowserModule,

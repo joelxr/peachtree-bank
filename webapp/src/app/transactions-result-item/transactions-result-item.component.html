@@ -1,0 +1,24 @@
+<div class="transaction" [style]="'border-left-color: ' + transaction.categoryCode">
+  <div class="date">
+    {{ transaction.dates.valueDate | date:'MMM. dd. yyyy' }}
+  </div>
+  <div class="logo">
+    <img
+      *ngIf="transaction.merchant.logo"
+      class="img"
+      [src]="'data:image/png;base64,' + transaction.merchant.logo"
+      alt="logo"/>
+    <div
+      *ngIf="!transaction.merchant.logo"
+      class="img placeholder">
+    </div>
+  </div>
+  <div class="beneficiary">
+    <p> {{ transaction.merchant.name }} </p>
+    <p> {{ transaction.transaction.type }} </p>
+  </div>
+  <div class="amount">
+    {{ transaction.transaction.creditDebitIndicator === 'CRDT' ? '': '-' }}
+    {{ transaction.transaction.amountCurrency.amount | currency: transaction.transaction.amountCurrency.currencyCode }}
+  </div>
+</div>

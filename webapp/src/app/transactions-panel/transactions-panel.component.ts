@@ -9,7 +9,6 @@ import { Transaction } from '../../shared/types/Transaction';
   styleUrls: ['./transactions-panel.component.scss']
 })
 export class TransactionsPanelComponent implements OnInit {
-
   transactionService: TransactionService;
   transactions: Array<Transaction>;
 
@@ -17,13 +16,9 @@ export class TransactionsPanelComponent implements OnInit {
     this.transactionService = transactionService;
   }
 
-  ngOnInit(): void {
-    this.loadTransactions();
-  }
+  ngOnInit(): void { }
 
   loadTransactions(filter: TransactionFilter = {searchBy: '', sortingPreferences: []}): void {
-    const data = this.transactionService.load(filter);
-    console.log(data);
+    this.transactionService.load(filter).then((data) => this.transactions = data);
   }
-
 }
