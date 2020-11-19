@@ -1,0 +1,59 @@
+@import "../../design/breakpoints";
+@import "../../design/colors";
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid $orange;
+  background-color: white;
+  padding: 0.8rem;
+
+  .logo {
+    width: 240px;
+    margin-left: 0; 
+  }
+}
+
+@media (min-width: $sm) {
+  .header {
+    padding: 1rem;
+
+    .logo {
+      width: 260px;
+      margin-left: 1rem; 
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .header {
+    padding: 0.8rem;
+
+    .logo {
+      width: 280px;
+      margin-left: 2.2rem; 
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  .header {
+    padding: 1.2rem;
+
+    .logo {
+      width: 300px;
+      margin-left: 2.6rem; 
+    }
+  }
+}
+
+@media (min-width: $xl) {
+  .header {
+    padding: 1.2rem;
+
+    .logo {
+      width: 320px;
+      margin-left: 3rem; 
+    }
+  }
+}
