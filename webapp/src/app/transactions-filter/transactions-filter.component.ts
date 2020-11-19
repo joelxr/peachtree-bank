@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SortingOrder, SortingPreference } from '../../shared/types/SortingPreference';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SortingOrder } from '../../shared/types/SortingPreference';
+import { TransactionFilter } from '../../shared/types/TransactionFilter';
 
 @Component({
   selector: 'app-transactions-filter',
@@ -8,12 +9,17 @@ import { SortingOrder, SortingPreference } from '../../shared/types/SortingPrefe
 })
 export class TransactionsFilterComponent implements OnInit {
 
-  searchBy = '';
-  sortingPreferences: Array<SortingPreference> = [
-    { prop: 'date', order: SortingOrder.DESC },
-    { prop: 'beneficiary', order: SortingOrder.NONE },
-    { prop: 'amount', order: SortingOrder.NONE }
-  ];
+  filter: TransactionFilter = {
+    searchBy: '',
+    sortingPreferences: [
+      { prop: 'date', order: SortingOrder.DESC },
+      { prop: 'beneficiary', order: SortingOrder.NONE },
+      { prop: 'amount', order: SortingOrder.NONE }
+    ]
+  };
+
+  @Output()
+  filterChanged = new EventEmitter<TransactionFilter>();
 
   constructor() { }
 
@@ -21,10 +27,11 @@ export class TransactionsFilterComponent implements OnInit {
   }
 
   handleSearchByChanged(text: string): void {
-    this.searchBy = text;
+    this.filter.searchBy = text;
+    this.filterChanged.emit(this.filter);
   }
 
   handleSortingPreferencesChanged(): void {
-
+    this.filterChanged.emit(this.filter);
   }
 }

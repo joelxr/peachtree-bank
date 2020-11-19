@@ -3,14 +3,14 @@
     <app-input-text
       id="searchBy"
       placeholder="Search by typing"
-      [value]="searchBy"
+      [value]="filter.searchBy"
       (valueChanged)="handleSearchByChanged($event)"
       >
     </app-input-text>
   </div>
   <div class="right">
     <app-transactions-sorter
-      [value]="sortingPreferences"
+      [value]="filter.sortingPreferences"
       (valueChanged)="handleSortingPreferencesChanged()"
     >
     </app-transactions-sorter>

@@ -9,6 +9,7 @@ import { TransferPanelComponent } from './transfer-panel/transfer-panel.componen
 import { TransactionsPanelComponent } from './transactions-panel/transactions-panel.component';
 import { TransactionsFilterComponent } from './transactions-filter/transactions-filter.component';
 import { TransactionsSorterComponent } from './transactions-sorter/transactions-sorter.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TransactionsSorterComponent } from './transactions-sorter/transactions-
     TransactionsSorterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
