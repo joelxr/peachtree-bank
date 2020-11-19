@@ -1,0 +1,19 @@
+.inputGroup {
+  margin: 1rem 0;
+
+  label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .input {
+    width: 100%;
+    padding: 0.2rem 0;
+    color: #87837f;
+    border: none;
+    border-bottom: 1px solid #cfcac5;
+    outline: none;
+  }
+}

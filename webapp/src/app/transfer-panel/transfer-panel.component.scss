@@ -1,0 +1,18 @@
+@import "../../design/colors";
+
+.transferForm {
+  display: flex;
+  flex-flow: column nowrap;
+
+  .submitBtn {
+    align-self: flex-end;
+    margin: 2rem 0 1rem 0;
+    padding: 0.6rem 4rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    background-color: $orange;
+    border: none;
+    border-radius: 4px;
+  }
+}

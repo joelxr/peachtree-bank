@@ -1,0 +1,17 @@
+<div class="inputGroup">
+  <label
+    *ngIf="!!label"
+    [for]="id"
+  >
+    {{ label }}
+  </label>
+  <input
+    class="input"
+    type="text"
+    [name]="id"
+    [id]="id"
+    [placeholder]="placeholder"
+    [readonly]="readOnly"
+    [(value)]="value"
+  />
+</div>
