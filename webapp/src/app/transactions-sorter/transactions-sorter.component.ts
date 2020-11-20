@@ -19,9 +19,11 @@ export class TransactionsSorterComponent implements OnInit {
   ngOnInit(): void {}
 
   updateSortingPreference(preference: SortingPreference): void {
-    if (
-      preference.order === SortingOrder.NONE
-    )  {
+    this.value
+      .filter(sortingPreference => sortingPreference.prop !== preference.prop)
+      .forEach(sortingPreference => sortingPreference.order = SortingOrder.NONE);
+
+    if (preference.order === SortingOrder.NONE)  {
       preference.order = SortingOrder.DESC;
     } else if (preference.order === SortingOrder.DESC) {
       preference.order = SortingOrder.ASC;

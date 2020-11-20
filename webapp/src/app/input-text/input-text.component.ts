@@ -15,6 +15,7 @@ export class InputTextComponent implements OnInit {
   @Input() inputType = 'text';
   @Input() unit = '';
   @Input() unitPlacement = '';
+  @Input() showClearBtn = false;
 
   @Output() valueChanged = new EventEmitter<string>();
 

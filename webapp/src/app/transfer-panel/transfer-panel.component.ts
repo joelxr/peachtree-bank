@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TransactionService } from '../transaction.service';
+import { Transaction } from '../../shared/types/Transaction';
 
 @Component({
   selector: 'app-transfer-panel',
@@ -6,18 +8,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transfer-panel.component.scss']
 })
 export class TransferPanelComponent implements OnInit {
-
-  origin = 'Free Checking(4692) - $5824.76';
+  transactionService: TransactionService;
+  balance = 5824.76;
+  origin = 'Free Checking(4692)';
   beneficiary = '';
   amount = '';
+  preview = false;
 
-  constructor() { }
+  constructor(transactionService: TransactionService) {
+    this.transactionService = transactionService;
+  }
 
   ngOnInit(): void {
   }
 
-  sendTransfer(): void {
-    console.log(this.origin, this.beneficiary, this.amount);
+  previewTransfer(): void {
+    this.preview = true;
   }
 
+  confirmTransfer(): void {
+    const t: Transaction = {
+      categoryCode: '#12a580',
+      dates: {
+        valueDate: new Date().getTime()
+      },
+      transaction: {
+        amountCurrency: {
+          amount: Number(this.amount),
+          currencyCode: 'USD'
+        },
+        type: 'Transfer',
+        creditDebitIndicator: 'DBT'
+      },
+      merchant: {
+        name: this.beneficiary,
+        accountNumber: ''
+      }
+    };
+
+    this.transactionService.add(t);
+
+    this.preview = false;
+    this.balance -= Number(this.amount);
+    this.amount = '';
+    this.beneficiary = '';
+  }
 }

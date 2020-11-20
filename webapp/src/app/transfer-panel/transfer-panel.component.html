@@ -1,16 +1,17 @@
 <app-panel title="Make a Transfer" icon="arrows2">
-  <div class="transferForm">
+  <form *ngIf="!preview" class="form" novalidate>
     <app-input-text
       id="fromAccount"
       label="From Account"
       [readOnly]="true"
-      [value]="origin"
-      >
+      [value]="origin + ' - ' + balance"
+    >
     </app-input-text>
     <app-input-text
       id="toAccount"
       label="To Account"
-      [(value)]="beneficiary"
+      [value]="beneficiary"
+      (valueChanged)="beneficiary = $event"
     >
     </app-input-text>
     <app-input-text
@@ -19,15 +20,37 @@
       inputType="number"
       unit="$"
       unitPlacement="start"
-      [(value)]="amount"
+      [value]="amount"
+      (valueChanged)="amount = $event"
     >
     </app-input-text>
     <button
       type="button"
-      class="submitBtn"
-      (click)="sendTransfer()"
+      class="btn"
+      (click)="previewTransfer()"
+      [disabled]="(!beneficiary.length || balance <= 0 || !amount.length || +amount <= 0)"
     >
       Submit
+    </button>
+  </form>
+  <div *ngIf="preview" class="form">
+    <p>
+      You're transfering
+      <span class="keyword">{{ amount | currency }}</span>
+      to
+      <span class="keyword">{{ beneficiary | uppercase }}</span>
+    </p>
+    <p>
+      Balance after this 
+      <span class="keyword">{{ balance - amount | currency }}</span>
+    </p>
+    <p>It's that right?</p>
+    <button
+      type="button"
+      class="btn"
+      (click)="confirmTransfer()"
+    >
+      Transfer
     </button>
   </div>
 </app-panel>

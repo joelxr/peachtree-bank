@@ -1,6 +1,6 @@
 <div class="transaction" [style]="'border-left-color: ' + transaction.categoryCode">
   <div class="date">
-    {{ transaction.dates.valueDate | date:'MMM. dd. yyyy' }}
+    {{ (transaction.dates.valueDate | date:'MMM. dd. yyyy') }}
   </div>
   <div class="logo">
     <img

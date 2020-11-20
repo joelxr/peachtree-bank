@@ -19,9 +19,18 @@
       [id]="id"
       [placeholder]="placeholder"
       [readonly]="readOnly"
-      [value]="value"
+      [(value)]="value"
       (input)="handleTextInput($event.target.value)"
     />
+    <button
+      *ngIf="showClearBtn && value"
+      type="button"
+      class="clearBtn"
+      (click)="handleTextInput('')"
+      title="Clear"
+    >
+      ⨉
+    </button>
     <span
       *ngIf="unit && unitPlacement === 'end'"
       class="unit"
