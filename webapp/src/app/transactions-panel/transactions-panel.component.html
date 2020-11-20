@@ -1,8 +1,10 @@
 <app-panel title="Recent Transactions" icon="briefcase2" [full]="true">
-  <app-transactions-filter
-    (filterChanged)="loadTransactions($event)"
-  >
-  </app-transactions-filter>
+  <div class="filter">
+    <app-transactions-filter
+      (filterChanged)="loadTransactions($event)"
+    >
+    </app-transactions-filter>
+  </div>
   <app-transactions-result
     [transactions]="transactions"
   >
