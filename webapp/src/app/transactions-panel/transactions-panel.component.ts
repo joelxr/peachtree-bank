@@ -18,7 +18,7 @@ export class TransactionsPanelComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  loadTransactions(filter: TransactionFilter = {searchBy: '', sortingPreferences: []}): void {
-    this.transactionService.load(filter).then((data) => this.transactions = data);
+  loadTransactions(filter: TransactionFilter = {searchBy: '', sortingPreferences: []}): Promise<Array<Transaction>> {
+    return this.transactionService.load(filter).then((data) => this.transactions = data);
   }
 }

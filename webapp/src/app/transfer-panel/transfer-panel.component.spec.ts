@@ -24,4 +24,18 @@ describe('TransferPanelComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('preview', () => {
+    component.previewTransfer();
+    expect(component.preview).toBeTrue();
+  });
+
+  it('confirm transfer', () => {
+    component.confirmTransfer();
+    expect(component.preview).toBeFalse();
+    expect(component.balance).toBeTruthy();
+    expect(component.amount).toEqual('');
+    expect(component.beneficiary).toEqual('');
+  });
+
 });

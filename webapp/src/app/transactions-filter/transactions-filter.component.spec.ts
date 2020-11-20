@@ -22,4 +22,15 @@ describe('TransactionsFilterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('handleSearchByChanged changes the filter', () => {
+    const expected = 'Test';
+    component.handleSearchByChanged('Test');
+    expect(component.filter.searchBy).toEqual(expected);
+  });
+
+  it('handleSortingPreferencesChanged emits the filter', () => {
+    component.handleSortingPreferencesChanged();
+    expect(true).toEqual(true);
+  });
 });

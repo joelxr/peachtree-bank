@@ -24,4 +24,8 @@ describe('TransactionsPanelComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('calls loadTransaction', () => {
+    expect(component.loadTransactions()).toBeTruthy();
+  });
 });

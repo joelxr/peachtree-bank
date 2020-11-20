@@ -69,7 +69,7 @@ export class TransactionService {
     return new Promise(async (resolve , reject) => {
       let result: Array<Transaction>;
 
-      if (!this.transactions) {
+      if (!this.transactions || !this.transactions.length) {
         const { data } = await this.fetchTransactions();
         this.transactions = data;
       }

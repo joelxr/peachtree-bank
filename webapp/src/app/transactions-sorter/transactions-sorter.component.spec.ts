@@ -35,7 +35,6 @@ describe('TransactionsSorterComponent', () => {
     component.updateSortingPreference({ prop: 'beneficiary', order: SortingOrder.NONE });
     component.updateSortingPreference({ prop: 'amount', order: SortingOrder.NONE });
     component.updateSortingPreference({ prop: 'date', order: SortingOrder.NONE });
-    console.log(expected, component.value);
     expect(component.value).toEqual(expected);
   });
 });

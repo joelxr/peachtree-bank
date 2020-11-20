@@ -22,4 +22,10 @@ describe('InputTextComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('handleTextInput changes the value', () => {
+    const expected = 'Test 1';
+    component.handleTextInput('Test 1');
+    expect(component.value).toEqual(expected);
+  });
 });
