@@ -14,7 +14,7 @@ class ResponseData {
 export class TransactionService {
   http: HttpClient;
 
-  transactions: Array<Transaction>;
+  transactions: Array<Transaction> = [];
 
   constructor(http: HttpClient) {
     this.http = http;
@@ -24,7 +24,9 @@ export class TransactionService {
     return this.http.get<ResponseData>('assets/transactions.json').toPromise();
   }
 
-  filter(result: Array<Transaction>, filter: TransactionFilter): Array<Transaction> {
+  filter(transactions: Array<Transaction>, filter: TransactionFilter): Array<Transaction> {
+    let result = [...transactions];
+
     if (filter.searchBy) {
       result = result
         .filter(t => new RegExp(filter.searchBy, 'i').test(t.merchant.name));
@@ -77,7 +79,8 @@ export class TransactionService {
     });
   }
 
-  add(t: Transaction): void {
+  add(t: Transaction): Array<Transaction> {
     this.transactions.unshift(t);
+    return this.transactions;
   }
 }

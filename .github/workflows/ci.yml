@@ -26,3 +26,8 @@ jobs:
         working-directory: webapp
         run: |
           npm run test:ci
+
+      - name: Upload coverage
+        working-directory: webapp
+        run: |
+          bash <(curl -s https://codecov.io/bash) -t ${secrets.CODECOV_TOKEN}

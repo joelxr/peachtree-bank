@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bd70a1f9-780b-4c15-ba37-a8a01fef7105/deploy-status)](https://app.netlify.com/sites/awesome-einstein-f30e24/deploys)![Run tests](https://github.com/joelxr/peachtree-bank/workflows/Run%20tests/badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bd70a1f9-780b-4c15-ba37-a8a01fef7105/deploy-status)](https://app.netlify.com/sites/awesome-einstein-f30e24/deploys)![Run tests](https://github.com/joelxr/peachtree-bank/workflows/Run%20tests/badge.svg)[![codecov](https://codecov.io/gh/joelxr/peachtree-bank/branch/main/graph/badge.svg?token=S3GCAUR9QG)](https://codecov.io/gh/joelxr/peachtree-bank) 
 
 # `peachtree-bank`
 
