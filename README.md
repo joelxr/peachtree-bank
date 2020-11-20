@@ -12,6 +12,7 @@ To build and run this project you just need to do the following.
 
 ```
 cd webapp/
+
 npm install
 
 # To start the development server
@@ -23,4 +24,9 @@ npm run build
 
 ## Application structure
 
-TDB
+This application rely on Angular CLI boilerplate, so the folders are similar to any web application created with this tool.
+
+But the following folders have been added to it, below the description and the motivation.
+
+- `src/shared/types`: All classes and interfaces needed for this project can be found here.
+- `src/design`: All `*.scss` files for styling are here,mostly constants to be reused over all components.
