@@ -47,7 +47,6 @@ export class TransferPanelComponent implements OnInit {
     };
 
     this.transactionService.add(t);
-
     this.preview = false;
     this.balance -= Number(this.amount);
     this.amount = '';

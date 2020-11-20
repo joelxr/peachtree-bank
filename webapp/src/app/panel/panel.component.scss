@@ -1,7 +1,12 @@
 @import "../../design/colors";
+@import "../../design/breakpoints";
 
 .panel {
   background-color: white;
+
+  .body {
+    padding: 0.4rem 1rem;
+  }
 
   .header {
     display: flex;
@@ -23,8 +28,17 @@
       text-align: center;
     }
   }
+}
 
-  .body {
-    padding: 0.4rem 1rem;
+@media (min-width: $md) {
+  .panel {
+    &.full {
+      height: 100%;
+
+      .body {
+        height: calc(100% - 45px);
+        overflow: auto;
+      }
+    }
   }
 }

@@ -1,4 +1,4 @@
-<app-panel title="Recent Transactions" icon="briefcase2">
+<app-panel title="Recent Transactions" icon="briefcase2" [full]="true">
   <app-transactions-filter
     (filterChanged)="loadTransactions($event)"
   >
