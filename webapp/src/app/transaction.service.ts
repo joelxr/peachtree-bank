@@ -75,6 +75,7 @@ export class TransactionService {
       }
 
       result = this.filter(this.transactions, filter);
+      this.transactions = result;
       resolve(result);
     });
   }
