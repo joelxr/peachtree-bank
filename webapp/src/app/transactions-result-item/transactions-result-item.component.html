@@ -1,4 +1,4 @@
-<div class="transaction" [style]="'border-left-color: ' + transaction.categoryCode">
+<div *ngIf="transaction" class="transaction" [style]="'border-left-color: ' + transaction.categoryCode">
   <div class="date">
     {{ (transaction.dates.valueDate | date:'MMM. dd. yyyy') }}
   </div>

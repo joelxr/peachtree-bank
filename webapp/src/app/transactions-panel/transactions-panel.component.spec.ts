@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { TransactionsPanelComponent } from './transactions-panel.component';
 
@@ -8,7 +9,8 @@ describe('TransactionsPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TransactionsPanelComponent ]
+      imports: [ HttpClientTestingModule ],
+      declarations: [ TransactionsPanelComponent ],
     })
     .compileComponents();
   });
