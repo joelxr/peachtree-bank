@@ -1,6 +1,10 @@
 <ul class="transactionList">
-  <li *ngFor="let transaction of transactions;">
-    <app-transactions-result-item [transaction]="transaction">
-    </app-transactions-result-item>
-  </li>
+  <p *ngIf="!loading && !transactions.length">No results</p>
+  <p *ngIf="loading">Loading...</p>
+  <div *ngIf="!loading && transactions.length">
+    <li *ngFor="let transaction of transactions;">
+      <app-transactions-result-item [transaction]="transaction">
+      </app-transactions-result-item>
+    </li>
+  </div>
 </ul>

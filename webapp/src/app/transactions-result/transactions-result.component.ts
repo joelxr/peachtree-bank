@@ -8,12 +8,11 @@ import { Transaction } from '../../shared/types/Transaction';
 })
 export class TransactionsResultComponent implements OnInit {
 
-  @Input()
-  transactions: Array<Transaction>;
+  @Input() transactions: Array<Transaction>;
+  @Input() loading = false;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
