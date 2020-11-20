@@ -9,6 +9,7 @@ import { Transaction } from '../../shared/types/Transaction';
 })
 export class TransferPanelComponent implements OnInit {
   transactionService: TransactionService;
+  minBalance = -500.00;
   balance = 5824.76;
   origin = 'Free Checking(4692)';
   beneficiary = '';

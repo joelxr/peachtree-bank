@@ -4,7 +4,7 @@
       id="fromAccount"
       label="From Account"
       [readOnly]="true"
-      [value]="origin + ' - ' + balance"
+      [value]="origin + ' - ' + (balance | currency)"
     >
     </app-input-text>
     <app-input-text
@@ -28,9 +28,9 @@
       type="button"
       class="btn"
       (click)="previewTransfer()"
-      [disabled]="(!beneficiary.length || balance <= 0 || !amount.length || +amount <= 0)"
+      [disabled]="(!beneficiary.length || balance - amount <= minBalance || !amount.length || +amount < 0)"
     >
-      Submit
+    Submit
     </button>
   </form>
   <div *ngIf="preview" class="form">
