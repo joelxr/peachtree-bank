@@ -1,7 +1,7 @@
 <ul class="transactionList">
-  <p *ngIf="!loading && !transactions.length">No results</p>
   <p *ngIf="loading">Loading...</p>
-  <div *ngIf="!loading && transactions.length">
+  <p *ngIf="!loading && (!transactions || !transactions.length)">No results</p>
+  <div *ngIf="!loading && transactions && transactions.length">
     <li *ngFor="let transaction of transactions;">
       <app-transactions-result-item [transaction]="transaction">
       </app-transactions-result-item>
